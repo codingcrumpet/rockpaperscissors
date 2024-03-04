@@ -10,29 +10,47 @@ const playerSelection = userMovePrompt;
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
 
+let playerScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "rock"){
         alert("The computer chose rock. You tied!");
+        playerScore += 1;
+        computerScore += 1;
         } else if (playerSelection == "rock" && computerSelection == "paper"){
            alert("The computer chose paper. You lost!");
+           computerScore += 1;
         } else if (playerSelection == "rock" && computerSelection == "scissors"){
            alert("The computer chose scissors. You won!");
+           playerScore += 1;
         } else if (playerSelection == "scissors" && computerSelection == "scissors"){
-            alert("The computer chose scissors. You tied!");
+            alert("The computer chose scissors. You tied!"); 
+            playerScore += 1;
+            computerScore += 1;
         } else if (playerSelection == "scissors" && computerSelection == "rock"){
-            alert("The computer chose rock. You lost!");
+            alert("The computer chose rock. You lost!"); 
+            computerScore += 1;
         } else if (playerSelection == "scissors" && computerSelection == "paper"){
-            alert("The computer chose paper. You won!") 
+            alert("The computer chose paper. You won!"); 
+            playerScore += 1;
         } else if (playerSelection == "paper" && computerSelection == "paper"){
-            alert("The computer chose paper. You tied!")  
+            alert("The computer chose paper. You tied!");
+            playerScore += 1;
+            computerScore += 1; 
         } else if (playerSelection == "paper" && computerSelection == "scissors"){
-            alert("The computer chose scissors. You lost!")  
+            alert("The computer chose scissors. You lost!");
+            computerScore += 1;
         } else if (playerSelection == "paper" && computerSelection == "rock")
-            alert("The computer chose rock. You won!")   
+            alert("The computer chose rock. You won!");
+            playerScore += 1;  
 }
 
 
+
+const roundOver = playRound();
+
+// create function where if alert includes "won" up playerscore by 1, if lose, up computerscore by 1, and add first to reach 3 score = overall winner alert
 
 
 
@@ -63,16 +81,4 @@ function playRound() {
 }
 
 
-*/
-
-
-/*
-Step 1: Prompt shows up providing options to player
-Step 2: Prompt input activates computer choice
-Step 3: Activation of computer choice compares (maybe using boolean) computer choice to player choice
-Step 4: Comparison of player choices leads to win, tie, or loss for player/computer
-Step 5: Result is then returned to user via alert
-Step 6: new prompt shows up, providing chance to play again.
-
---> Thoughts; between step 5/6, might need a button? which requires html
 */
